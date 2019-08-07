@@ -2,7 +2,7 @@ import string
 
 from flask import abort, request
 from flask_restful import Resource
-from Model import db, Book, BookSchema, Vocab, VocabSchema
+from  vocabulary_catalogue.models.model import db, Book, BookSchema, Vocab
 
 book_schema = BookSchema(strict=True)
 books_schema = BookSchema(many=True)

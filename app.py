@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from flask_restful import Api
-from resources.Book import BookResource
-from resources.Vocab import VocabResource
+from  vocabulary_catalogue.resources.Book import BookResource
+from  vocabulary_catalogue.resources.Vocab import VocabResource
 
 api_bp = Blueprint('api', __name__)
 api = Api(api_bp)
@@ -10,7 +10,7 @@ api = Api(api_bp)
 
 @api_bp.route("/", methods = ["GET", "POST"])
 def index():
-    return jsonify("Welcome to Vocabulary Builder!")
+    return jsonify("Welcome to Vocabulary Catalogue!")
 
 api.add_resource(
     BookResource,
