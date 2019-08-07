@@ -14,7 +14,7 @@ def index():
 
 api.add_resource(
     BookResource,
-    '/books',
+    '/book',
     '/book/id/<int:id>'
 )
 

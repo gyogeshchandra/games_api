@@ -53,6 +53,30 @@ class BookResource(Resource):
 
         return result, 201
 
+    def put(self, id=None):
+        if not id:
+            abort(405)
+        json_data = request.get_json()
+        if not json_data:
+               return {'message': 'No input data provided'}, 400
+
+        # Validate and deserialize input
+        data, errors = book_schema.load(json_data)
+        if errors:
+            return errors, 422
+        book = Book.query.filter_by(id=id).first()
+        if not book:
+            return {'message': 'Unable to find book'}, 400
+
+        if data.get('author'):
+            book.author = data['author']
+        if data.get('title'):
+            book.title = data['title']
+
+        db.session.commit()
+        result = book_schema.dump(book).data
+        return result, 204
+
     def delete(self, id=None):
         if id is None:
             abort(405)
