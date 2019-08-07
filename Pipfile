@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-restful = "*"
+flask_script = "==2.0.6"
+flask_migrate = "==2.1.1"
+marshmallow = "*"
+sqlalchemy = "*"
+psycopg2 = "==2.7.5"
+flask_sqlalchemy = "==2.3.2"
+marshmallow-sqlalchemy = "==0.13.2"
+requests = "==2.21.0"
+
+[dev-packages]
+pytest = "~=3.8"
+pytest-mock = "*"
+marshmallow = "*"
+factory_boy = "*"
+requests = "==2.21.0"
+
+[requires]
+python_version = "3.4"
