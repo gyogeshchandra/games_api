@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'gamesapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "sqlalchemy",
+        'NAME': "games",
         'USER': "usr",
         'PASSWORD': "pass",
         'HOST': "localhost",
